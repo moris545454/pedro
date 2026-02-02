@@ -1,0 +1,1 @@
+-- Server-side placeholder for future expansion.
