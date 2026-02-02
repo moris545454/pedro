@@ -168,6 +168,12 @@ local function setUiVisible(visible)
     })
 end
 
+local function forceCloseUi()
+    uiOpen = false
+    SetNuiFocus(false, false)
+    SendNUIMessage({ action = 'close' })
+end
+
 local function sendUiState()
     if not uiOpen then
         return
@@ -410,6 +416,20 @@ end)
 RegisterNUICallback('close', function(_, cb)
     setUiVisible(false)
     cb({ ok = true })
+end)
+
+AddEventHandler('onResourceStart', function(resourceName)
+    if resourceName ~= GetCurrentResourceName() then
+        return
+    end
+    forceCloseUi()
+end)
+
+AddEventHandler('onResourceStop', function(resourceName)
+    if resourceName ~= GetCurrentResourceName() then
+        return
+    end
+    forceCloseUi()
 end)
 
 CreateThread(function()

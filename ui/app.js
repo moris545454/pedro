@@ -109,11 +109,13 @@ trickButton.addEventListener('click', () => {
 });
 
 closeButton.addEventListener('click', () => {
+  setVisible(false);
   sendAction('close');
 });
 
 window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
+    setVisible(false);
     sendAction('close');
   }
 });
