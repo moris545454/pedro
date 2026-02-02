@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pet Companion</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app" id="app" aria-hidden="true">
+      <div class="panel">
+        <header>
+          <div>
+            <p class="eyebrow">FiveM Companion</p>
+            <h1>Pet Control</h1>
+            <div class="subtitle-row">
+              <p class="subtitle" id="petName">Buddy</p>
+              <span class="badge" id="petMood">Happy</span>
+            </div>
+          </div>
+          <button class="ghost" id="close">×</button>
+        </header>
+
+        <section class="card">
+          <h2>Spawn</h2>
+          <p>Select a model and spawn your companion.</p>
+          <div class="row">
+            <select id="modelSelect" aria-label="Pet model"></select>
+            <button class="primary" id="spawn">Spawn</button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Status</h2>
+          <div class="stats">
+            <div class="stat">
+              <span>Hunger</span>
+              <div class="bar"><span id="hungerBar"></span></div>
+              <strong id="hungerValue">100</strong>
+            </div>
+            <div class="stat">
+              <span>Stamina</span>
+              <div class="bar"><span id="staminaBar"></span></div>
+              <strong id="staminaValue">100</strong>
+            </div>
+            <div class="stat">
+              <span>Affection</span>
+              <div class="bar"><span id="affectionBar"></span></div>
+              <strong id="affectionValue">100</strong>
+            </div>
+            <div class="stat">
+              <span>Level</span>
+              <div class="bar"><span id="xpBar"></span></div>
+              <strong id="levelValue">1</strong>
+            </div>
+          </div>
+          <div class="row">
+            <input id="renameInput" type="text" placeholder="Rename pet" maxlength="20" />
+            <button class="secondary" id="rename">Rename</button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Training</h2>
+          <div class="row">
+            <select id="trickSelect" aria-label="Trick">
+              <option value="sit">Sit</option>
+              <option value="bark">Bark</option>
+              <option value="beg">Beg</option>
+            </select>
+            <button class="secondary" id="trick">Perform</button>
+          </div>
+        </section>
+
+        <section class="grid">
+          <button class="action" id="follow">
+            <span>Follow</span>
+            <small>Stay close to you</small>
+          </button>
+          <button class="action" id="stay">
+            <span>Stay</span>
+            <small>Hold position</small>
+          </button>
+          <button class="action" id="dismiss">
+            <span>Dismiss</span>
+            <small>Remove companion</small>
+          </button>
+          <button class="action" id="feed">
+            <span>Feed</span>
+            <small>Restore hunger</small>
+          </button>
+          <button class="action" id="heal">
+            <span>Heal</span>
+            <small>Restore health</small>
+          </button>
+          <button class="action" id="whistle">
+            <span>Whistle</span>
+            <small>Recall nearby</small>
+          </button>
+          <button class="action" id="play">
+            <span>Play</span>
+            <small>Boost affection</small>
+          </button>
+        </section>
+
+        <footer>
+          <div class="hint">Press ESC to close</div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
